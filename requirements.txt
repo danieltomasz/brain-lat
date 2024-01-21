@@ -1,0 +1,12 @@
+pandas
+polars>0.20.0
+pyarrow
+tabulate
+pysftp
+synapseclient
+specparam
+ipykernel
+python-dotenv
+pip
+mne
+seaborn
