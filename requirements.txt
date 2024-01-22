@@ -10,3 +10,5 @@ python-dotenv
 pip
 mne
 seaborn
+invoke
+nbconvert
