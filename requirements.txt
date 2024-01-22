@@ -12,3 +12,4 @@ mne
 seaborn
 invoke
 nbconvert
+fooof

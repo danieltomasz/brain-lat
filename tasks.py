@@ -32,12 +32,21 @@ def downlnoad_data(c):
 
 
 @invoke.task
-def eeg_data_overview(c):
+def dataset_overview(c):
     """
     Loads and converts PSD data to dataarray form from via Jupyter notebook.
     """
     if Path("/Volumes/T7/BrainLat").exists():
-        notebook = "notebooks/Brain_Lat_overview.ipynb"
+        notebook = "notebooks/00_Dataset_overview.ipynb"
+        run_notebook(c, notebook)
+
+@invoke.task
+def check_subject(c):
+    """
+    Loads and converts PSD data to dataarray form from via Jupyter notebook.
+    """
+    if Path("/Volumes/T7/BrainLat").exists():
+        notebook = "notebooks/01_Plot_subject.ipynb"
         run_notebook(c, notebook)
 
 
@@ -47,4 +56,6 @@ def run_all(c):
     """
     Runs the entire pipeline.
     """
-    eeg_data_overview(c)
+    dataset_overview(c)
+    check_subject(c)
+
