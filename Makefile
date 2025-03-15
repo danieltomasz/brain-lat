@@ -2,7 +2,7 @@
 .PHONY: install
 
 PROJECT?=brainlat
-VERSION?=3.12.1
+VERSION?=3.12.9
 
 VENV=${PROJECT}-${VERSION}
 VENV_DIR=$(shell pyenv root)/versions/${VENV}
@@ -11,6 +11,7 @@ JUPYTER_ENV_NAME=${VENV}
 
 install:
 	@echo "Installing $(VENV)"
+	env PYTHON_CONFIGURE_OPTS=--enable-shared pyenv install --skip-existing ${VERSION}
 	env PYTHON_CONFIGURE_OPTS=--enable-shared pyenv virtualenv ${VERSION} ${VENV}
 	pyenv local ${VENV}
 	$(PYTHON) -m pip  install -U pip

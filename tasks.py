@@ -7,8 +7,8 @@ from pathlib import Path
 import invoke
 
 VARS = "PYDEVD_DISABLE_FILE_VALIDATION=1"
-ENV = "3.12.1"
-VENV = "brainlat-3.12.1"
+ENV = "3.12.2"
+VENV = "brainlat-3.12.2"
 PYTHON = f"~/.pyenv/versions/{ENV}/envs/{VENV}/bin/python"
 
 
@@ -24,7 +24,7 @@ def run_notebook(c, notebook):
 
 
 @invoke.task
-def downlnoad_data(c):
+def download_data(c):
     """
     Downloads data from Synapse.
     """
